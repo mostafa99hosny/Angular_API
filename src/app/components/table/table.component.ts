@@ -26,7 +26,11 @@ export class TableComponent implements OnInit {
     });
   }
   deleteHandler(productId:string){
-  
+  this.productsService.deleteProduct(productId).subscribe({
+    next:(response )=>{
+      this.products = this.products.filter((product)=>product.id!=productId)
+    }
+  })
     
   }
 

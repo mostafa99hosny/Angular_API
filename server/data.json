@@ -1,46 +1,46 @@
-{"products":[
+{
+  "products": [
     {
-        "id":"1",
-        "name":"chair",
-        "price":"1000",
-        "quantity":"50",
-        "img":"imgs5.png"
+      "id": "1",
+      "name": "chair",
+      "price": "1000",
+      "quantity": "50",
+      "img": "imgs5.png"
     },
     {
-        "id":"2",
-        "name":"Table",
-        "price":"1200",
-        "quantity":"30",
-        "img":"imgs2.png"
+      "id": "2",
+      "name": "Table",
+      "price": "1200",
+      "quantity": "30",
+      "img": "imgs2.png"
     },
     {
-        "id":"3",
-        "name":"Cupboard",
-        "price":"1400",
-        "quantity":"10",
-        "img":"imgs1.png"
+      "id": "3",
+      "name": "Cupboard",
+      "price": "1400",
+      "quantity": "10",
+      "img": "imgs1.png"
     },
     {
-        "id":"4",
-        "name":"TV",
-        "price":"2100",
-        "quantity":"18",
-        "img":"imgs3.png"
+      "id": "4",
+      "name": "TV",
+      "price": "2100",
+      "quantity": "18",
+      "img": "imgs3.png"
     },
     {
-        "id":"5",
-        "name":"Sofa",
-        "price":"3000",
-        "quantity":"22",
-        "img":"imgs4.png"
+      "id": "5",
+      "name": "Sofa",
+      "price": "3000",
+      "quantity": "22",
+      "img": "imgs4.png"
     },
     {
-        "id":"6",
-        "name":"Bed",
-        "price":"6000",
-        "quantity":"0",
-        "img":"imgs6.png"
+      "id": "6",
+      "name": "Bed",
+      "price": "6000",
+      "quantity": "0",
+      "img": "imgs6.png"
     }
-
-]
+  ]
 }
