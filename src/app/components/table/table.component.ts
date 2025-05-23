@@ -17,7 +17,7 @@ export class TableComponent implements OnInit {
   ngOnInit(): void {
     this.productsService.getAllProducts().subscribe({
       next:(response) =>{
-        console.log(response);
+        this.products = response;
       },
       error:(error)=>{
         console.log(error);
