@@ -1,8 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { StaticProductService } from '../../services/static-product.service';
 import { Iproduct } from '../../models/iproduct';
 import { RouterLink } from '@angular/router';
+import { DynamicProductService } from '../../services/dynamic-product.service';
 @Component({
   selector: 'app-table',
   imports: [CommonModule,RouterLink],
@@ -12,13 +12,21 @@ import { RouterLink } from '@angular/router';
 export class TableComponent implements OnInit {
   products!:Iproduct[];
 
-  constructor(private productsService:StaticProductService){}
+  constructor(private productsService:DynamicProductService){}
 
   ngOnInit(): void {
-    this.products=this.productsService.getAllProducts();
+    this.productsService.getAllProducts().subscribe({
+      next:(response) =>{
+        console.log(response);
+      },
+      error:(error)=>{
+        console.log(error);
+        
+      }
+    });
   }
   deleteHandler(productId:string){
-    this.products=this.productsService.deleteProduct(productId);
+  
     
   }
 

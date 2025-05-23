@@ -1,19 +1,69 @@
 <app-shared-card class="p-3">
-    <h2 class="text-center text-muted">Add New Product</h2>
-<form>
+  <h2 class="text-center text-muted">Add New Product</h2>
+  <form [formGroup]="productForm" (click)="productHandler($event)">
     <div class="mb-3">
       <label for="productName" class="form-label">Product Name</label>
-      <input type="text" class="form-control" id="productName" aria-describedby="emailHelp" placeholder="Enter Product Name">
-      <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+      <input
+        type="text"
+        class="form-control"
+        id="productName"
+        aria-describedby="emailHelp"
+        placeholder="Enter Product Name"
+        formControlName="name"
+      />
+      @if (getName.touched) {
+         @if (getName.hasError('required')) {
+      <div id="emailHelp" class="text-danger form-text">
+        Product Name is required
+      </div>
+      } @if (getName.hasError('minlength')) {
+      <div id="emailHelp" class="text-danger form-text">
+        Product Name length must be greater than 3
+      </div>
+      } 
+    }
+
+      <!-- <div id="emailHelp" class="text-danger form-text">
+        {{ getName.errors | json}}
+      </div> -->
     </div>
     <div class="mb-3">
       <label for="productPrice" class="form-label">Product Price</label>
-      <input type="text" class="form-control" id="productPrice" placeholder="Enter Product Price">
+      <input
+        type="text"
+        class="form-control"
+        id="productPrice"
+        placeholder="Enter Product Price"
+        formControlName="price"
+      />
+      @if (getPrice.touched){
+         @if (getPrice.hasError('required')) {
+      <div id="emailHelp" class="text-danger form-text">
+        Product Price is required
+      </div>
+      } 
+    }
     </div>
     <div class="mb-3">
-        <label for="productQuantity" class="form-label">Product quantity</label>
-        <input type="text" class="form-control" id="productQuantity" placeholder="Enter Product quantity">
+      <label for="productQuantity" class="form-label">Product quantity</label>
+      <input
+        type="text"
+        class="form-control"
+        id="productQuantity"
+        placeholder="Enter Product quantity"
+        formControlName="quantity"
+      />
+      @if (getQuanntity.touched) { 
+        @if (getQuanntity.hasError('required')) {
+      <div id="emailHelp" class="text-danger form-text">
+        Product Quantity is required
       </div>
+      }
+     }
+    </div>
+    <p class="lead mb-4">
+      {{ productForm.value | json }}
+    </p>
 
     <button type="submit" class="btn btn-success">Add New Product</button>
   </form>
