@@ -1,10 +1,10 @@
 {
   "products": [
     {
-      "id": "1",
       "name": "chair",
       "price": "1000",
       "quantity": "50",
+      "id": "1",
       "img": "imgs5.png"
     },
     {

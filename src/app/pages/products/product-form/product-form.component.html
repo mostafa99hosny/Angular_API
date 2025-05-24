@@ -1,6 +1,6 @@
 <app-shared-card class="p-3">
-  <h2 class="text-center text-muted">Add New Product</h2>
-  <form [formGroup]="productForm" (click)="productHandler($event)">
+  <h2 class="text-center text-muted">{{productId==0 ? 'Add New Product' : 'Edit Product'}}</h2>
+  <form [formGroup]="productForm" (submit)="productHandler($event)">
     <div class="mb-3">
       <label for="productName" class="form-label">Product Name</label>
       <input
@@ -62,6 +62,8 @@
       {{ productForm.value | json }}
     </p>
 
-    <button type="submit" class="btn btn-success">Add New Product</button>
+    <button type="submit" class="btn btn-success">
+      {{ productId == 0 ? "Add Product" : "Edit Product" }}
+    </button>
   </form>
 </app-shared-card>
